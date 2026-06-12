@@ -1,0 +1,43 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  background: #f4f6fb;
+  color: #202020;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+header h1 {
+  margin-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 24px;
+}
+
+.card,
+.details-card {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.error {
+  color: #c53030;
+}
