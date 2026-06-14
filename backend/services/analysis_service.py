@@ -1,14 +1,15 @@
 from typing import List
-from models.review_model import ReviewResult
+from services.db_service import list_reviews, get_review_by_id, save_review
 
 
 async def fetch_review_list() -> List[dict]:
-    # Placeholder: replace with persistent storage or database
-    return []
+    return await list_reviews()
 
 
 async def fetch_review_details(review_id: str) -> dict:
-    # Placeholder: return dummy object for now
+    review = await get_review_by_id(review_id)
+    if review:
+        return review
     return {
         "id": review_id,
         "title": "Manual review stub",
@@ -20,8 +21,13 @@ async def fetch_review_details(review_id: str) -> dict:
 
 
 async def execute_manual_review(payload: dict) -> dict:
-    return {
+    review = {
+        "title": payload.get("title", "Manual review request"),
         "status": "queued",
+        "summary": "Review request received and queued.",
+        "issues": [],
+        "suggestions": [],
         "payload": payload,
-        "message": "Manual review request received.",
     }
+    await save_review(review)
+    return review
