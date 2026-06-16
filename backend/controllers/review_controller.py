@@ -5,7 +5,7 @@ async def get_reviews():
     return await fetch_review_list()
 
 
-async def get_review(review_id: str):
+async def get_review review_id: str
     return await fetch_review_details(review_id)
 
 
