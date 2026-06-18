@@ -62,9 +62,9 @@ Yes — use **MongoDB** for review storage.
 So your database config becomes:
 - `backend/.env`
   - `GITHUB_TOKEN=...`
-  - `BEDROCK_MODEL=...`
-  - `BEDROCK_REGION=...`
   - `GITHUB_WEBHOOK_SECRET=...`
+  - `GEMINI_API_KEY=...`
+  - `GEMINI_MODEL=gemini-2.5-flash`
   - `MONGODB_URI=mongodb://localhost:27017`
 
 ---
