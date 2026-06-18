@@ -6,8 +6,8 @@ async def get_reviews():
 
 
 async def get_review review_id: str
-    return await fetch_review_details(review_id)
+     await fetch_review_details review_id
 
 
 async def trigger_review(payload: dict):
-    return await execute_manual_review(payload)
+    return await execute_manual_review payload
