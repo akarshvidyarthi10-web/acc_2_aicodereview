@@ -7,6 +7,12 @@ async def get_reviews() -> Dict[str, List[dict]]:
     return await fetch_review_list()
 
 
+async def get_review review_id: str
+     await fetch_review_details review_id
+
+
+async def trigger_review(payload: dict):
+    return await execute_manual_review payload
 async def get_review(review_id: str) -> dict:
     return await fetch_review_details(review_id)
 
