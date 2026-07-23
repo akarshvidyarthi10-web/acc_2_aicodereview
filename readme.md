@@ -22,10 +22,10 @@ pip install -r requirements.txt
 
 Create `backend/.env`:
 ```
-GITHUB_TOKEN=ghp_xxxx
-GITHUB_WEBHOOK_SECRET=my_secret_key
-BEDROCK_MODEL=amazon.titan
-BEDROCK_REGION=us-east-1
+GITHUB_TOKEN=your_github_token_here
+GITHUB_WEBHOOK_SECRET=your_webhook_secret_here
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
 MONGODB_URI=mongodb://localhost:27017
 ```
 
@@ -116,7 +116,7 @@ See `backend/.env.example` for all options.
 
 ## 📝 Notes
 
-- Bedrock integration placeholder in `backend/services/ai_service.py`
+- Gemini integration is configured in `backend/services/ai_service.py`
 - MongoDB stores reviews in `ai_code_review.reviews` collection
 - GitHub webhook signature verified with `GITHUB_WEBHOOK_SECRET`
 

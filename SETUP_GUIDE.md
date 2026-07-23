@@ -28,10 +28,10 @@ https://abc123def456.ngrok.app
 ### 1. Create `.env` file in `backend/` folder
 
 ```
-GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-GITHUB_WEBHOOK_SECRET=my_super_secret_webhook_key_12345
-BEDROCK_MODEL=amazon.titan
-BEDROCK_REGION=us-east-1
+GITHUB_TOKEN=your_github_token_here
+GITHUB_WEBHOOK_SECRET=your_webhook_secret_here
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-2.5-flash
 MONGODB_URI=mongodb://localhost:27017
 ```
 
@@ -45,6 +45,10 @@ MONGODB_URI=mongodb://localhost:27017
 **GITHUB_WEBHOOK_SECRET:**
 - Use any random string (example: `webhook_secret_12345`)
 - Keep it safe — you'll need it for GitHub webhook form too
+
+**GEMINI_API_KEY:**
+- Set your Gemini API key from Google AI Studio
+- `GEMINI_MODEL` can remain `gemini-2.5-flash`
 
 ### 2. Install dependencies
 

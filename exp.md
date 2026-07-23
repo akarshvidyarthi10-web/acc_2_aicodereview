@@ -18,7 +18,7 @@
 
 #### `backend/config/settings.py`
 - Pydantic `BaseSettings` इस्तेमाल करके environment variables load करता है।
-- GitHub token, Bedrock model, webhook secret, MongoDB URI आदि configure करता है।
+- GitHub token, Gemini API key, webhook secret, MongoDB URI आदि configure करता है।
 - `.env` file से settings लेता है।
 
 #### `backend/routes/webhook.py`

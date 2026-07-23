@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routes import webhook, review
+from routes import analytics, repositories, review, security, webhook
+from config.settings import settings
 
 app = FastAPI(
     title="AI Code Review Agent",
@@ -18,6 +19,9 @@ app.add_middleware(
 
 app.include_router(webhook.router, prefix="/api")
 app.include_router(review.router, prefix="/api")
+app.include_router(security.router, prefix="/api")
+app.include_router(analytics.router)
+app.include_router(repositories.router)
 
 
 @app.get("/")
@@ -32,4 +36,9 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
+    return {
+        "webhook": "ok",
+        "github": "ok" if settings.github_token else "missing",
+        "gemini": "ok" if settings.gemini_api_key else "missing",
+        "database": "ok" if settings.mongodb_uri else "missing",
+    }
